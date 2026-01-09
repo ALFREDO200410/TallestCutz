@@ -14,298 +14,192 @@
         /* ===== HERO ===== */
         .hero {
             height:100vh;
-            background: url('https://images.unsplash.com/photo-1605462863863-2b4467e7b5d0?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
-            display:flex;
-            flex-direction:column;
-            justify-content:center;
-            align-items:center;
-            text-align:center;
-            position:relative;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1605462863863-2b4467e7b5d0?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+            display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;
         }
-        .hero::after {
-            content:'';
-            position:absolute;
-            top:0; left:0;
-            width:100%; height:100%;
-            background-color:rgba(0,0,0,0.6);
-        }
-        .hero-content {
-            position:relative;
-            z-index:2;
-        }
-        .hero h1 {
-            font-size:3.5em;
-            margin-bottom:20px;
-            color:#FFD700;
-        }
-        .hero p {
-            font-size:1.2em;
-            margin-bottom:30px;
-        }
-        .btn {
-            padding:15px 30px;
-            background-color:#FFD700;
-            color:#111;
-            font-weight:bold;
-            border:none;
-            border-radius:5px;
-            cursor:pointer;
-            transition:0.3s;
-        }
-        .btn:hover {background-color:#e6c200;}
+        .hero h1 { font-size:3.5em; margin-bottom:20px; color:#FFD700; }
+        .hero p { font-size:1.2em; margin-bottom:30px; }
+        .btn { padding:15px 30px; background-color:#FFD700; color:#111; font-weight:bold; border-radius:5px; transition:0.3s; cursor:pointer; }
 
-        /* ===== ABOUT ===== */
-        .about {padding:80px 0; text-align:center;}
-        .about h2 {color:#FFD700; font-size:2.5em; margin-bottom:20px;}
-        .about p {max-width:700px; margin:0 auto; font-size:1.1em; line-height:1.6; color:#ccc;}
+        /* ===== GALLERY ===== */
+        .gallery { padding: 60px 0; background: #1a1a1a; text-align: center; }
+        .gallery h2 { color: #FFD700; font-size: 2.5em; margin-bottom: 40px; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 0 20px; }
+        .gallery-item { border-radius: 15px; overflow: hidden; border: 3px solid #FFD700; height: 350px; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
 
         /* ===== BOOKING SECTION ===== */
-        .booking-section {padding:80px 0; background-color:#1a1a1a;}
-        .booking-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: start;
-        }
+        .booking-section {padding:80px 0; background-color:#111;}
+        .booking-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .booking-card { background-color:#222; padding:30px; border-radius:15px; border: 1px solid #444; }
+        label {display:block; margin-bottom:8px; font-weight:bold; color:#FFD700; font-size: 0.9em; margin-top: 15px;}
+        input, select, textarea { width:100%; padding:12px; border-radius:5px; border:1px solid #444; background:#333; color:#fff; font-size: 1em;}
+        textarea { height: 80px; resize: none; }
         
-        .price-list h3 {color:#FFD700; margin-bottom:15px; border-bottom: 1px solid #333; padding-bottom: 10px;}
-        .price-list ul {list-style:none; margin-bottom:30px;}
-        .price-list li {padding: 10px 0; border-bottom: 1px solid #222; color:#ddd; display: flex; justify-content: space-between;}
-
-        .booking-card {
-            background-color:#222;
-            padding:30px;
-            border-radius:15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-        .booking-card h2 {text-align:center; color:#FFD700; margin-bottom:25px;}
-        
-        label {display:block; margin-bottom:8px; font-weight:bold; color:#FFD700; font-size: 0.9em;}
-        input, select {
-            width:100%; 
-            padding:12px; 
-            margin-bottom:20px; 
-            border-radius:5px; 
-            border:1px solid #444; 
-            background:#333; 
-            color:#fff;
+        .total-box { 
+            background: #FFD700; color: #111; padding: 15px; border-radius: 5px; 
+            text-align: center; margin: 20px 0; font-size: 1.5em; font-weight: bold; 
         }
 
-        .booking-card button {
-            width:100%;
-            padding:15px;
-            background-color:#FFD700;
-            color:#111;
-            font-weight:bold;
-            border:none;
-            border-radius:5px;
-            cursor:pointer;
-            font-size:1.1em;
-            transition: 0.3s;
-        }
-        .booking-card button:hover {background-color:#e6c200;}
+        .booking-card button { width:100%; padding:15px; background-color:#FFD700; color:#111; font-weight:bold; border:none; border-radius:5px; cursor:pointer; font-size:1.1em; }
 
-        /* ===== TESTIMONIALS ===== */
-        .testimonials {padding:80px 0; text-align:center;}
-        .testimonials h2 {font-size:2.5em; margin-bottom:50px; color:#FFD700;}
-        .testimonial {max-width:600px; margin:0 auto 30px; font-style:italic; padding: 20px; background: #222; border-radius: 10px;}
+        /* ===== POLICY SECTION ===== */
+        .policy-box { background: #1a1a1a; padding: 20px; border-radius: 10px; border-left: 5px solid #FFD700; margin-top: 20px;}
+        .policy-box h4 { color: #FFD700; margin-bottom: 10px; }
+        .policy-box p { font-size: 0.9em; line-height: 1.5; color: #ccc; }
 
-        /* ===== POLICIES ===== */
-        .policies {padding:80px 0; background-color:#111;}
-        .policies-content {max-width:800px; margin:0 auto; line-height:1.8;}
-        .policies h2 {text-align: center; color:#FFD700; margin-bottom:30px;}
-        .policy-item {margin-bottom: 15px; padding-left: 20px; border-left: 3px solid #FFD700;}
-
-        /* ===== FOOTER ===== */
-        footer {padding:60px 0; text-align:center; border-top: 1px solid #333;}
-        footer p {margin-bottom:10px; color:#888;}
-
-        /* ===== WHATSAPP BUTTON ===== */
-        .whatsapp-float {
-            position:fixed; bottom:20px; right:20px;
-            background-color:#25D366; color:#fff;
-            padding:15px 25px; border-radius:50px;
-            font-weight:bold; box-shadow:0 4px 10px rgba(0,0,0,0.3);
-            z-index: 100;
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media(max-width:768px){
-            .booking-container {grid-template-columns: 1fr;}
-            .hero h1 {font-size: 2.5em;}
-        }
+        @media(max-width:768px){ .booking-container {grid-template-columns: 1fr;} }
     </style>
 </head>
 <body>
 
 <section class="hero">
-    <div class="hero-content">
-        <h1>Tallest Cutz</h1>
-        <p>Clean cuts. Sharp confidence. Home & shop barber service.</p>
-        <a href="#booking" class="btn">Book Appointment Now</a>
-    </div>
+    <h1>Tallest Cutz</h1>
+    <p>Clean cuts. Sharp confidence. Home & shop barber service.</p>
+    <a href="#booking" class="btn">Book Now</a>
 </section>
 
-<section class="about">
+<section class="gallery">
     <div class="container">
-        <h2>About Tallest Cutz</h2>
-        <p>
-            Tallest Cutz is a professional barber service focused on clean, modern haircuts.
-            We offer both home service and house shop options, with strong attention to hygiene,
-            punctuality, and customer satisfaction.
-        </p>
+        <h2>Our Work</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="Image/fade.jpg" alt="Fade"></div>
+            <div class="gallery-item"><img src="Image/fade1.jpg" alt="Style"></div>
+            <div class="gallery-item"><img src="Image/fade2.jpg" alt="Clean"></div>
+        </div>
     </div>
 </section>
 
 <section class="booking-section" id="booking">
     <div class="container">
         <div class="booking-container">
-            
-            <div class="price-list">
-                <h3>🏠 House Shop Prices</h3>
-                <ul>
-                    <li><span>Full Barbing</span> <span>₦2,000</span></li>
-                    <li><span>Barbing + Dye</span> <span>₦3,500</span></li>
-                    <li><span>Line-up & Shaving</span> <span>₦1,000</span></li>
-                    <li><span>Line-up & Dye</span> <span>₦1,500</span></li>
-                </ul>
-
-                <h3>🚗 Home Service Prices</h3>
-                <ul>
-                    <li><span>Full Barbing</span> <span>₦3,000</span></li>
-                    <li><span>Barbing + Dye</span> <span>₦4,500</span></li>
-                    <li><span>Line-up & Shaving</span> <span>₦1,500</span></li>
-                    <li><span>Line-up & Dye</span> <span>₦2,000</span></li>
-                </ul>
+            <div class="info">
+                <h2 style="color:#FFD700; font-size: 2.5em;">Book Your Session</h2>
+                <p style="margin: 20px 0; color: #ccc; line-height: 1.6;">Fill in your details below. We prioritize punctuality and quality service.</p>
+                
+                <div class="policy-box">
+                    <h4>📌 Capacity Policy</h4>
+                    <p>Please note that I only cater to the <strong>exact number of people</strong> selected in your booking. If more people show up than were booked, they may not receive service to ensure I stay on schedule for other clients.</p>
+                </div>
+                
+                <div class="policy-box" style="margin-top: 15px;">
+                    <h4>🏠 Home Service</h4>
+                    <p>Provide a clear address and ensure a well-lit space with a power outlet is available.</p>
+                </div>
             </div>
 
             <div class="booking-card">
-                <h2>Book Your Slot</h2>
+                <label>Full Name</label>
+                <input type="text" id="name" placeholder="Enter your name">
                 
-                <label>Your Name</label>
-                <input type="text" id="name" placeholder="Enter your full name">
-
-                <label>Service Type (Location)</label>
-                <select id="location" onchange="updateServiceOptions()">
-                    <option value="House Shop">House Shop (At our location)</option>
-                    <option value="Home Service">Home Service (I come to you)</option>
+                <label>Service Type</label>
+                <select id="location" onchange="calculateTotal()">
+                    <option value="House Shop">House Shop</option>
+                    <option value="Home Service">Home Service</option>
                 </select>
 
-                <label>Select Service & Price</label>
-                <select id="service">
-                    </select>
-
-                <div style="display:flex; gap:15px;">
-                    <div style="flex:1;">
-                        <label>Date</label>
-                        <input type="date" id="date">
-                    </div>
-                    <div style="flex:1;">
-                        <label>Time</label>
-                        <input type="time" id="time">
-                    </div>
+                <div id="address-section" style="display:none;">
+                    <label>Your Address</label>
+                    <input type="text" id="address" placeholder="Full address for home service">
                 </div>
 
-                <button onclick="sendBooking()">Confirm via WhatsApp</button>
+                <label>Select Service</label>
+                <select id="service" onchange="calculateTotal()"></select>
+
+                <label>Number of People</label>
+                <select id="people" onchange="calculateTotal()">
+                    <option value="1">1 Person</option>
+                    <option value="2">2 People</option>
+                    <option value="3">3 People</option>
+                    <option value="4">4 People</option>
+                </select>
+
+                <div style="display:flex; gap:10px;">
+                    <div style="flex:1;"><label>Date</label><input type="date" id="date"></div>
+                    <div style="flex:1;"><label>Time</label><input type="time" id="time"></div>
+                </div>
+
+                <label>Special Instructions (Optional)</label>
+                <textarea id="notes" placeholder="Describe styles or specific needs..."></textarea>
+
+                <div class="total-box">Total: <span id="total-display">₦0</span></div>
+
+                <button onclick="book()">Confirm via WhatsApp</button>
             </div>
-
         </div>
     </div>
 </section>
-
-<section class="testimonials">
-    <div class="container">
-        <h2>What Clients Say</h2>
-        <div class="testimonial">⭐⭐⭐⭐⭐<br>“Very clean cuts and professional service. Always on time.”</div>
-        <div class="testimonial">⭐⭐⭐⭐⭐<br>“Best line-up I’ve had in a long time. Highly recommended.”</div>
-    </div>
-</section>
-
-<section class="policies">
-    <div class="container">
-        <div class="policies-content">
-            <h2>Booking Policies</h2>
-            <div class="policy-item"><strong>Appointment Booking:</strong> All appointments are confirmed via WhatsApp.</div>
-            <div class="policy-item"><strong>Punctuality:</strong> Please be ready at the scheduled time.</div>
-            <div class="policy-item"><strong>Cancellations:</strong> Notify us at least 2 hours before your appointment.</div>
-            <div class="policy-item"><strong>Hygiene:</strong> We maintain strictly sterilized tools for every client.</div>
-        </div>
-    </div>
-</section>
-
-<footer>
-    <div class="container">
-        <p><strong>Tallest Cutz</strong> — Clean cuts. Sharp confidence.</p>
-        <p>🟢 Open daily: 8:00 a.m – 6:30 p.m</p>
-        <p>📞 +234 90 145 233 20</p>
-        <p>&copy; 2024 Tallest Cutz. All rights reserved.</p>
-    </div>
-</footer>
-
-<a href="https://wa.me/2349014523320" class="whatsapp-float">Chat on WhatsApp</a>
 
 <script>
-    // Price data object
-    const servicesData = {
-        "House Shop": [
-            { name: "Full Barbing", price: "₦2,000" },
-            { name: "Barbing + Dye", price: "₦3,500" },
-            { name: "Line-up & Shaving", price: "₦1,000" },
-            { name: "Line-up & Dye", price: "₦1,500" }
-        ],
-        "Home Service": [
-            { name: "Full Barbing", price: "₦3,000" },
-            { name: "Barbing + Dye", price: "₦4,500" },
-            { name: "Line-up & Shaving", price: "₦1,500" },
-            { name: "Line-up & Dye", price: "₦2,000" }
-        ]
+    const prices = {
+        "House Shop": {
+            "Full Barbing": 2000,
+            "Barbing + Dye": 3500,
+            "Line-up & Shaving": 1000,
+            "Line-up & Dye": 1500
+        },
+        "Home Service": {
+            "Full Barbing": 3000,
+            "Barbing + Dye": 4500,
+            "Line-up & Shaving": 1500,
+            "Line-up & Dye": 2000
+        }
     };
 
-    // Function to update the dropdown based on Home vs Shop
-    function updateServiceOptions() {
-        const location = document.getElementById("location").value;
+    function calculateTotal() {
+        const loc = document.getElementById("location").value;
         const serviceSelect = document.getElementById("service");
+        const peopleCount = parseInt(document.getElementById("people").value);
+        const addressSection = document.getElementById("address-section");
         
-        // Clear current options
-        serviceSelect.innerHTML = "";
+        addressSection.style.display = (loc === "Home Service") ? "block" : "none";
 
-        // Add correct prices
-        servicesData[location].forEach(item => {
-            const option = document.createElement("option");
-            option.value = `${item.name} (${item.price})`;
-            option.textContent = `${item.name} - ${item.price}`;
-            serviceSelect.appendChild(option);
-        });
-    }
-
-    // Function to handle WhatsApp Redirect
-    function sendBooking() {
-        const name = document.getElementById("name").value;
-        const location = document.getElementById("location").value;
-        const service = document.getElementById("service").value;
-        const date = document.getElementById("date").value;
-        const time = document.getElementById("time").value;
-
-        if (!name || !date || !time) {
-            alert("Please fill in your name, date, and time.");
-            return;
+        if (serviceSelect.innerHTML === "") {
+            Object.keys(prices[loc]).forEach(s => {
+                let opt = document.createElement("option");
+                opt.value = s; opt.text = s + " - ₦" + prices[loc][s].toLocaleString();
+                serviceSelect.appendChild(opt);
+            });
         }
 
-        const message = `Hello Tallest Cutz!%0A%0A` +
-                        `*Booking Details*%0A` +
-                        `--------------------%0A` +
-                        `*Name:* ${encodeURIComponent(name)}%0A` +
-                        `*Service:* ${encodeURIComponent(service)}%0A` +
-                        `*Type:* ${encodeURIComponent(location)}%0A` +
-                        `*Date:* ${date}%0A` +
-                        `*Time:* ${time}`;
+        const selectedService = serviceSelect.value;
+        const unitPrice = prices[loc][selectedService] || 0;
+        const total = unitPrice * peopleCount;
 
-        const phoneNumber = "2349014523320";
-        window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
+        document.getElementById("total-display").innerText = "₦" + total.toLocaleString();
+        return total;
     }
 
-    // Run once on load to populate the first set of services
-    window.onload = updateServiceOptions;
+    document.getElementById("location").addEventListener('change', () => {
+        document.getElementById("service").innerHTML = "";
+        calculateTotal();
+    });
+
+    function book() {
+        const name = document.getElementById("name").value;
+        const loc = document.getElementById("location").value;
+        const address = document.getElementById("address").value;
+        const serv = document.getElementById("service").value;
+        const people = document.getElementById("people").value;
+        const dateVal = document.getElementById("date").value;
+        const time = document.getElementById("time").value;
+        const notes = document.getElementById("notes").value;
+        const total = document.getElementById("total-display").innerText;
+
+        if(!name || !dateVal || !time) return alert("Please fill all details!");
+
+        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const dayName = days[new Date(dateVal).getDay()];
+
+        let msg = `Hello Tallest Cutz!%0A*Name:* ${name}%0A*Service:* ${serv}%0A*People:* ${people}%0A*Type:* ${loc}`;
+        if(loc === "Home Service") msg += `%0A*Address:* ${address}`;
+        msg += `%0A*Date:* ${dateVal} (${dayName})%0A*Time:* ${time}%0A*Total:* ${total}`;
+        if(notes) msg += `%0A*Notes:* ${notes}`;
+
+        window.open(`https://wa.me/2349014523320?text=${msg}`, "_blank");
+    }
+
+    window.onload = calculateTotal;
 </script>
 
 </body>
